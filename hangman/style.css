@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+    width: 400px; /* Adjust as needed for your design */
+}
+
+#hangman-image {
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+#word-display {
+    margin-bottom: 20px;
+    font-size: 1.2em; /* Adjust font size for readability on mobile */
+}
+
+#guess-input {
+    margin-bottom: 20px;
+}
+
+#guess-input input[type="text"],
+#guess-input button {
+    width: 100%; /* Make input and button full-width on mobile */
+    padding: 10px;
+    font-size: 1em; /* Adjust font size for readability on mobile */
+    box-sizing: border-box;
+}
+
+#attempts {
+    margin-bottom: 20px;
+}
+
+#message {
+    display: none;
+    margin-top: 20px;
+}
+
+#message button {
+    margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+
+    body {
+        height: auto;
+        margin: auto;
+    }
+    .container {
+        width: 90%; /* Adjust width for smaller screens */
+    }
+    
+    #hangman-image {
+        max-width: 80%; /* Reduce image size for smaller screens */
+    }
+    
+    #word-display {
+        font-size: 1em; /* Further adjust font size for smaller screens */
+    }
+}
