@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Hangman Game</h1>
+        <div id="hangman-display">
+            <pre id="hangman-image"></pre>
+        </div>
+        <div id="word-display">
+            <p id="word-display-text"></p>
+        </div>
+        <div id="attempts">
+            <p>Remaining Attempts: <span id="attempts-count">6</span></p>
+        </div>
+        <div id="guess-input">
+            <input type="text" id="guess-input-field" placeholder="Enter a letter" onkeypress="handleKeyPress(event)">
+            <button onclick="guessLetter()">Guess</button>
+        </div>
+        <div id="message">
+            <p id="message-text"></p>
+            <button onclick="resetGame()">Play Again</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
