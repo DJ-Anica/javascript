@@ -9,11 +9,12 @@
 <body>
     <div class="container">
         <h1>Caesar Cipher</h1>
+        <img src="Denarius_54_BC.jpg" alt="Caesar Cipher Image" class="responsive-img">
         <textarea id="message" placeholder="Enter your message"></textarea>
         <input type="number" id="shift" placeholder="Enter the shift number">
         <div>
-            <button onclick="encryptMessage()">Encrypt</button>
-            <button onclick="decryptMessage()">Decrypt</button>
+            <button onclick="encryptMessage()" id="encrypt">Encrypt</button>
+            <button onclick="decryptMessage()" id="decrypt">Decrypt</button>
         </div>
         <h2>Result:</h2>
         <p id="result"></p>
