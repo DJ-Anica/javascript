@@ -9,11 +9,17 @@
 <body>
     <div class="container">
         <h1>Hangman Game</h1>
+        <div id="category">
+            <p><span><b>Category: </b></span><span id="category-name"></span></p>
+        </div>
         <div id="hangman-display">
             <pre id="hangman-image"></pre>
         </div>
         <div id="word-display">
             <p id="word-display-text"></p>
+        </div>
+        <div id="guessed-letter-display">
+            <p id="guessed-letters"><span>Guessed Letters:</span><br><span id="letters"></span></p>
         </div>
         <div id="attempts">
             <p>Remaining Attempts: <span id="attempts-count">6</span></p>
