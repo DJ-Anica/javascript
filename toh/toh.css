@@ -1,111 +1,89 @@
-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
-    margin: 0;
-}
-
-#game {
+h1 {
     text-align: center;
-    width: 100%;
+    color: black; /* Adjusting header color to match the theme */
 }
 
-#towers {
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 2px;
+    width: 306px;
+    margin: 0 auto;
+}
+
+/* Specific styles for X and O */
+.cell.X {
+    color: white; /* White color inside the letter */
+    font-family: 'Aptos', sans-serif; /* Changed font to Arial */
+    -webkit-text-stroke: 2px #00f; /* Blue border around the letters */
+    text-shadow: 
+        0 0 10px #00f, 
+        0 0 20px #00f, 
+        0 0 30px #00f, 
+        0 0 40px #00f, 
+        0 0 50px #00f,
+        0 0 60px #00f, 
+        0 0 70px #00f; /* Blue neon glow effect */
+}
+
+.cell.O {
+    color: white; /* White color inside the letter */
+    font-family: 'Aptos', sans-serif; /* Changed font to Arial */
+    -webkit-text-stroke: 2px #f00; /* Red border around the letters */
+    text-shadow: 
+        0 0 10px #f00, 
+        0 0 20px #f00, 
+        0 0 30px #f00, 
+        0 0 40px #f00, 
+        0 0 50px #f00,
+        0 0 60px #f00, 
+        0 0 70px #f00; /* Red neon glow effect */
+}
+
+.cell {
+    background-color: #000000a2; /* Black background to enhance neon effect */
+    border: 1px solid #000; /* Black border for the cell */
     display: flex;
     justify-content: center;
-    margin-top: 20px;
-    width: 100%;
-    column-gap: 90px;
-}
-
-.tower {
-    width: 15px; /* Base width of towers */
-    height: 200px; /* Adjust height based on number of disks */
-    background-color: antiquewhite;
-    border: 1px solid #000;
-    margin: 0 10px;
-    display: flex;
-    flex-direction: column-reverse;
     align-items: center;
-}
-
-.disk {
-    width: 30px; /* Base width of disks */
-    height: 20px; /* Base height of disks */
-    margin: 2px;
-    background-color: #466f86; /* Default disk color */
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
-}
-
-.disk.selected {
-    transform: scale(1.05); /* Hover effect */
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3); /* Shadow effect */
-    background-color: #01f770 !important; /* Change color */
-    animation: pulse 1s infinite alternate; /* Pulse effect */
-}
-
-@keyframes pulse {
-    from {
-        transform: scale(1);
-    }
-    to {
-        transform: scale(1.1);
-    }
-}
-
-#controls {
-    margin-top: 20px;
-}
-
-button {
-    font-size: 1em;
-    margin: 0 10px;
-    padding: 8px 16px;
+    font-size: 2em;
     cursor: pointer;
+    color: white; /* White text color inside the cell */
+    font-family: 'Arial', sans-serif;
+    font-size: 3em;
+    text-shadow: 0 0 10px; /* Neon glow effect */
+    box-shadow: 0 0 20px; /* Neon glow effect */
+    transition: background-color 0.3s ease;
 }
 
-@media screen and (max-width: 1024px) {
-    body {
-        margin-top: 50px;
-        height: auto;
-    }
-    .tower {
-        width: 10px;
-        height: 150px;
-        margin: 0 5px;
-    }
-
-    .disk {
-        width: 25px;
-        height: 15px;
-        margin: 1px;
-    }
-
-    button {
-        font-size: 0.9em;
-        padding: 6px 12px;
-    }
+.cell:hover {
+    background-color: #33333388; 
 }
 
-@media (max-width: 480px) {
-    .tower {
-        width: 8px;
-        height: 120px;
-        margin: 0 3px;
-    }
+#status {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: black; /* Adjusting status text color to match the theme */
+}
 
-    .disk {
-        width: 20px;
-        height: 12px;
-        margin: 1px;
-    }
+button#restart-button {
+    display: flex;
+    margin: 20px auto;
+    padding: 10px 20px; /* Adding padding for better touch target */
+    font-size: 1em; /* Adjusting font size */
+    background-color: #000; /* Black background to enhance neon effect */
+    color: white; /* White text color */
+    border: 1px solid #fff; /* White border */
+    cursor: pointer;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff; /* Neon glow effect */
+    box-shadow: 0 0 20px #fff; /* Neon glow effect */
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
 
-    button {
-        font-size: 0.8em;
-        padding: 5px 10px;
-    }
+button#restart-button:hover {
+    background-color: #333; 
+    color: #fff;
 }
