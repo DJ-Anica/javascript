@@ -47,7 +47,7 @@ const HANGMANPICS = [
    /    |
         |
   =========`,
-  `
+    `
     +---+
     |   |
     O   |
@@ -65,6 +65,12 @@ const categories = {
     "3": ["soccer", "basketball", "tennis", "cricket", "volleyball", "badminton",
         "swimming", "golf", "hockey", "rugby", "baseball", "football", "boxing",
         "skating", "cycling", "fencing"]
+};
+
+const categoryNames = {
+    "1": "Fruits",
+    "2": "Animals",
+    "3": "Sports"
 };
 
 let word = "";
@@ -91,6 +97,17 @@ function displayWord() {
 function updateHangmanImage() {
     const hangmanImage = document.getElementById("hangman-image");
     hangmanImage.innerHTML = HANGMANPICS[incorrect_guesses];
+}
+
+function updateGuessedLetters() {
+    const guessedLettersDisplay = document.getElementById("letters");
+    guessedLettersDisplay.textContent = guessed_letters.join(", ");
+}
+
+function updateCategory(categoryChoice) {
+    const categoryName = categoryNames[categoryChoice];
+    const categoryDisplay = document.getElementById("category-name");
+    categoryDisplay.textContent = categoryName;
 }
 
 function showEndMessage(message) {
@@ -124,6 +141,8 @@ function startGame() {
     displayWord();
     updateHangmanImage();
     updateRemainingAttempts();
+    updateGuessedLetters();
+    updateCategory(categoryChoice);
 }
 
 function guessLetter() {
@@ -155,6 +174,7 @@ function guessLetter() {
 
     displayWord();
     updateHangmanImage();
+    updateGuessedLetters();
 
     if (incorrect_guesses >= max_incorrect_guesses) {
         showEndMessage(`💔 You lost! The word was "${word}". 😭`);
