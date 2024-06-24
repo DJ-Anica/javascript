@@ -1,0 +1,111 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+#game {
+    text-align: center;
+    width: 100%;
+}
+
+#towers {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+    column-gap: 90px;
+}
+
+.tower {
+    width: 15px; /* Base width of towers */
+    height: 200px; /* Adjust height based on number of disks */
+    background-color: antiquewhite;
+    border: 1px solid #000;
+    margin: 0 10px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.disk {
+    width: 30px; /* Base width of disks */
+    height: 20px; /* Base height of disks */
+    margin: 2px;
+    background-color: #466f86; /* Default disk color */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.disk.selected {
+    transform: scale(1.05); /* Hover effect */
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3); /* Shadow effect */
+    background-color: #01f770 !important; /* Change color */
+    animation: pulse 1s infinite alternate; /* Pulse effect */
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+
+#controls {
+    margin-top: 20px;
+}
+
+button {
+    font-size: 1em;
+    margin: 0 10px;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+    body {
+        margin-top: 50px;
+        height: auto;
+    }
+    .tower {
+        width: 10px;
+        height: 150px;
+        margin: 0 5px;
+    }
+
+    .disk {
+        width: 25px;
+        height: 15px;
+        margin: 1px;
+    }
+
+    button {
+        font-size: 0.9em;
+        padding: 6px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tower {
+        width: 8px;
+        height: 120px;
+        margin: 0 3px;
+    }
+
+    .disk {
+        width: 20px;
+        height: 12px;
+        margin: 1px;
+    }
+
+    button {
+        font-size: 0.8em;
+        padding: 5px 10px;
+    }
+}
