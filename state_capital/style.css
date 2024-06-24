@@ -14,7 +14,8 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 400px;
+    width: 90%;
+    max-width: 500px;
 }
 
 h1 {
@@ -24,6 +25,12 @@ h1 {
 p {
     margin: 20px auto;
     width: fit-content;
+    text-align: center;
+}
+
+img {
+    height: 200px;
+    width: auto;
 }
 
 input[type="text"] {
@@ -44,8 +51,45 @@ button {
     text-align: left;
 }
 
+@media screen and (max-width: 1024px) {
+    body {
+        height: auto;
+    }
+    .container {
+        width: 80%;
+        max-width: 600px;
+    }
+
+    img {
+        height: auto;
+        max-width: 100%;
+    }
+
+    input[type="text"] {
+        width: 80%;
+    }
+
+    button {
+        width: auto;
+    }
+}
+
 @media screen and (max-width: 600px) {
     body {
-        height: 50vh;
+        height: auto;
+        margin: 20px;
+    }
+
+    .container {
+        width: 90%;
+    }
+
+    img {
+        height: auto;
+        max-width: 100%;
+    }
+
+    input[type="text"] {
+        width: 90%;
     }
 }
