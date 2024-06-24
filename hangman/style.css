@@ -15,7 +15,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-width: 90%;
-    width: 400px; /* Adjust as needed for your design */
+    width: 400px; 
 }
 
 #hangman-image {
@@ -25,7 +25,13 @@ body {
 
 #word-display {
     margin-bottom: 20px;
-    font-size: 1.2em; /* Adjust font size for readability on mobile */
+    font-size: 1.2em; 
+}
+
+#guessed-letter-display {
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    text-align: center;
 }
 
 #guess-input {
@@ -34,9 +40,9 @@ body {
 
 #guess-input input[type="text"],
 #guess-input button {
-    width: 100%; /* Make input and button full-width on mobile */
+    width: 100%; 
     padding: 10px;
-    font-size: 1em; /* Adjust font size for readability on mobile */
+    font-size: 1em; 
     box-sizing: border-box;
 }
 
@@ -47,27 +53,75 @@ body {
 #message {
     display: none;
     margin-top: 20px;
+    font-size: 1.45em;
+    font-weight: 600;
 }
 
 #message button {
     margin-top: 10px;
 }
 
+/* Mobile Phone */
 @media (max-width: 600px) {
-
     body {
         height: auto;
         margin: auto;
     }
     .container {
-        width: 90%; /* Adjust width for smaller screens */
+        width: 90%; 
     }
-    
     #hangman-image {
-        max-width: 80%; /* Reduce image size for smaller screens */
+        max-width: 90%;
+        margin: auto;
     }
-    
     #word-display {
-        font-size: 1em; /* Further adjust font size for smaller screens */
+        font-size: 1em; 
+    }
+
+    #message {
+        display: none;
+        margin-top: 20px;
+        font-size: 1.25em;
+        font-weight: 600;
+    }
+
+    #guess-input input[type="text"],
+    #guess-input button {
+        width: 50%; 
+        padding: 10px;
+        font-size: 1em; 
+        box-sizing: border-box;
+    }
+}
+
+/* Tablet/iPad View */
+@media (min-width: 601px) and (max-width: 1024px) {
+    body {
+        height: auto;
+        margin: auto;
+    }
+    .container {
+        width: 80%; 
+    }
+    #hangman-image {
+        max-width: 80%;
+        margin: auto;
+    }
+    #word-display {
+        font-size: 1.1em;
+    }
+    #guess-input input[type="text"],
+    #guess-input button {
+        width: 48%;
+        margin: 1%;
+        padding: 12px;
+        font-size: 1.1em;
+    }
+    #attempts {
+        margin-bottom: 15px;
+    }
+    #message button {
+        font-size: 1em;
+        padding: 10px 20px;
     }
 }
