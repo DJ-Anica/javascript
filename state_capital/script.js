@@ -49,23 +49,28 @@ const states_capitals = {
     "West Virginia": "Charleston",
     "Wisconsin": "Madison",
     "Wyoming": "Cheyenne",
-  };
-  
-  function get_info(input_str) {
-      for (const [state, capital] of Object.entries(states_capitals)) {
-          if (input_str.toLowerCase() === capital.toLowerCase()) {
-              return `<p>The capital city of ${state} is located in: ${capital.toUpperCase()}</p>`;
-          } else if (input_str.toLowerCase() === state.toLowerCase()) {
-              return `<p>The capital of ${state} is: ${capital.toUpperCase()}</p>`;
-          }
-      }
-      return "<p>Not found.</p>";
-  }
-  
-  function getInfo() {
-      const userInput = document.getElementById("user-input").value.trim();
-      const outputDiv = document.getElementById("output");
-      const result = get_info(userInput);
-      outputDiv.innerHTML = result;
-  }
-  
+};
+
+function get_info(input_str) {
+    for (const [state, capital] of Object.entries(states_capitals)) {
+        if (input_str.toLowerCase() === capital.toLowerCase()) {
+            return `<p>The capital city of ${capital} is located in: ${state.toUpperCase()}</p>`;
+        } else if (input_str.toLowerCase() === state.toLowerCase()) {
+            return `<p>The capital of ${state} is: ${capital.toUpperCase()}</p>`;
+        }
+    }
+    return "<p>Not found.</p>";
+}
+
+function getInfo() {
+    const userInput = document.getElementById("user-input").value.trim();
+    const outputDiv = document.getElementById("output");
+    const result = get_info(userInput);
+    outputDiv.innerHTML = result;
+}
+
+document.getElementById("user-input").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        getInfo();
+    }
+});
