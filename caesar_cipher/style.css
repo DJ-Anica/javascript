@@ -14,6 +14,12 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px; /* Ensure a maximum width for large screens */
+}
+
+img {
+    height: 300px;
 }
 
 textarea, input {
@@ -22,6 +28,10 @@ textarea, input {
     padding: 10px;
     border-radius: 4px;
     border: 1px solid #ccc;
+}
+
+#shift {
+    width: 30%;
 }
 
 button {
@@ -38,7 +48,56 @@ button:hover {
     background-color: #0056b3;
 }
 
+#encrypt {
+    background-color: #009c27;
+}
+
+#decrypt {
+    background-color: #007BFF;
+}
+
 #result {
     font-weight: bold;
     color: #333;
+}
+
+
+/* Tablet/iPad View */
+@media screen and (max-width: 1024px) {
+
+    body {
+        height: 50vh;
+    }
+    .container {
+        max-width: 95%;
+        padding: 0%;
+    }
+    textarea, input {
+        width: 90%;
+    }
+
+    button {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    #shift {
+        width: 30%;
+    }
+}
+
+/* Mobile View */
+@media screen and (max-width: 601px) {
+
+    body {
+        height: auto;
+    }
+
+    img {
+        height: 200px;
+    }
+
+    #shift {
+        width: 50%;
+    }
 }
