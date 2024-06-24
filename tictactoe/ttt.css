@@ -1,0 +1,57 @@
+h1 {
+    text-align: center;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 2px;
+    width: 306px;
+    margin: 0 auto;
+}
+
+/* Specific styles for X and O */
+.cell.X {
+    color: #00f; /* Blue color for X */
+    text-shadow: 0 0 10px #00f; /* Blue neon glow effect */
+    box-shadow: 0 0 20px #00f; /* Blue neon glow effect */
+}
+
+.cell.O {
+    color: #f00; /* Red color for O */
+    text-shadow: 0 0 10px #f00; /* Red neon glow effect */
+    box-shadow: 0 0 20px #f00; /* Red neon glow effect */
+}
+
+.cell {
+    background-color: #000; /* Black background to enhance neon effect */
+    border: 1px solid #000; /* Black border for the cell */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    cursor: pointer;
+    color: #fff; /* White text color inside the cell */
+    font-family: 'Arial', sans-serif;
+    text-shadow: 0 0 10px; /* Neon glow effect */
+    box-shadow: 0 0 20px; /* Neon glow effect */
+    transition: background-color 0.3s ease;
+}
+
+.cell:hover {
+    background-color: #333; 
+}
+
+
+#status {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+button#restart-button {
+    display: flex;
+    margin: 20px auto;
+}
