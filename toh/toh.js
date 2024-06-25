@@ -97,8 +97,10 @@ document.addEventListener('DOMContentLoaded', () => {
     function checkWinCondition() {
         // Check if all disks are moved to the last tower
         if (towers[2].childElementCount === numDisks) {
-            alert('Congratulations! You solved the Tower of Hanoi puzzle.');
-            resetGame();
+            setTimeout(() => {
+                alert('Congratulations! You solved the Tower of Hanoi puzzle.');
+                resetGame();
+            }, 100); // Delay the alert to ensure the final disk is rendered
         }
     }
 });
