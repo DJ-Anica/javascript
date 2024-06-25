@@ -81,7 +81,15 @@ const max_incorrect_guesses = 6;
 let remaining_attempts = max_incorrect_guesses;
 
 function chooseCategory() {
-    return prompt("Choose a category to guess a word from:\n1. Fruits\n2. Animals\n3. Sports");
+    let categoryChoice;
+    while (true) {
+        categoryChoice = prompt("Choose a category to guess a word from:\n1. Fruits\n2. Animals\n3. Sports");
+        if (categoryChoice === "1" || categoryChoice === "2" || categoryChoice === "3") {
+            return categoryChoice;
+        } else {
+            alert("❌ Invalid choice!\nInput '1', '2', or '3' only");
+        }
+    }
 }
 
 function chooseWord(categoryChoice) {
